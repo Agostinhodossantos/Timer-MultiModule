@@ -8,64 +8,56 @@ Feel free to reach out to rita.oliveira@hubstaff.com or dmitry.neroba@hubstaff.c
 
 ## The Objective
 
-Finish implementation of a simple Stopwatch app using provided project.
+Hubstaff's application helps people work more efficiently and deliver proof of work to faciliate getting paid for every second you put in.
+
+In this challenge, we'll be asking you to finish the implementation of a simple Stopwatch app using the project provided.
+
 The project itself is a skeleton of the app, based on modular architecture. 
 
-Among  infrastructure modules it contains 2 service modules:
+There are 2 service modules in the infrastructure:
 
-`authentication` -  contains declaration of [AuthenticationManager](services/authentication/src/main/java/com/netsoft/android/authentication/AuthenticationManager.kt) and it's dummy implementation
+`authentication` - which contains the declaration of [AuthenticationManager](services/authentication/src/main/java/com/netsoft/android/authentication/AuthenticationManager.kt) and it's a dummy implementation;
 
-`timer` - contains only declaration of [TimeTicker](services/timer/src/main/java/com/netsoft/android/timer/TimeTicker.kt) interface
+`timer` - which contains only a declaration of [TimeTicker](services/timer/src/main/java/com/netsoft/android/timer/TimeTicker.kt) interface.
 
-### App requirements
+### App Requirements
 
- - App should consists of 2 screens: "Sign in" and "Timer"
+The app should:
+ - Consist of 2 screens: "Sign in" and "Timer";
 
- - And it should be able to keep ticking even if user exit UI and swipe killed it. So when user open it again, timer value includes elapsed time since exit.
+ - Be able to keep ticking even if the user exits the UI and swipe kills it. So when the user opens it again, the timer value includes the elapsed time since the exit.
 
 #### TimeTicker
 
-- Create the missing  TimeTicker implementation, which updates timer state every second
+ - Create the missing TimeTicker implementation, which updates the timer state every second.
 
 #### Sign In screen
 
- - has editable text fields for email and password
-   
- - button "sign in"
-   
- - let user enter credentials and perform sign in
-   
- - screen appears only if user is not signed in yet
-   
- - utilize existing AuthenticationManager implementation for all sign in related actions
+The Sign In screen should:
+ - Have editable text fields for email and password.
+ - Include a "Sign In" button.
+ - Allow the user to enter their credentials and perform sign in.
+ - Only appear if the user is not signed in yet.
+ - Utilize the existing AuthenticationManager implementation for all sign in related actions.
 
 #### Timer screen
 
-  - utilize TimeTicker implementation, which also needs to be implemented in scope of this task and updates timer state every second   
-    
-  - display current timer sate in a format "HH:mm:ss"
-    
-  - let user start/stop timer by click on a button 
-    
-  - button caption should inform user about action it performs: Start or Stop
-
-
-
+The Timer screen should:
+ - Utilize the TimeTicker implementation, which also needs to be implemented in the scope of this task and updates the timer state every second.
+ - Display the current timer state in the format "HH:mm:ss".
+ - Allow users to start/stop timer by clicking on a button. The button caption should inform the users about what action it performs: "Start" or "Stop".
 
 
 ## Submission
 
-Implementation needs to be done in Kotlin.
+For the execution of this challenge, we'd like you to follow these guidelines:
+- Implement the challenge in Kotlin.
+- Follow a modular architecture.
+- Preferably use the MVVM pattern inside modules.
+- Implement the UI with Jetpack Compose.
+- Use Hilt as DI - it's already configured in the project.
+- Add at least a few tests for the implemented classes.
 
-Please follow modular architecture.
-
-Inside modules it is preferable to use MVVM.
-
-UI needs to be implemented in Jetpack Compose.
-
-Use Hilt as DI, it is already presented in a project.
-
-Add at least few tests for implemented classes.
 
 ### Criteria
 
