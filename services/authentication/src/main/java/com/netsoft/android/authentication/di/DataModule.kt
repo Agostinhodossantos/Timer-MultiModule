@@ -1,7 +1,7 @@
 package com.netsoft.android.authentication.di
 
 import android.content.Context
-import com.netsoft.android.authentication.repository.ImplRepository
+import com.netsoft.android.authentication.repository.ImplAuthManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +15,6 @@ object DataModule {
 
     @Singleton
     @Provides
-    fun provideDataStoreRepository(@ApplicationContext context: Context)= ImplRepository(context)
+    fun provideDataStoreRepository(@ApplicationContext context: Context)= ImplAuthManager(context)
 
 }

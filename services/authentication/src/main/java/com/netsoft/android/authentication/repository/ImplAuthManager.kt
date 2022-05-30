@@ -18,7 +18,7 @@ const val DataStore_NAME = "USERS"
 val Context.datastore : DataStore< Preferences> by  preferencesDataStore(name = DataStore_NAME)
 
 
-class ImplRepository(private val context: Context) : AuthenticationManager {
+class ImplAuthManager(private val context: Context) : AuthenticationManager {
 
     companion object{
         val EMAIL = stringPreferencesKey("EMAIL")

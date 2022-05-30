@@ -27,7 +27,6 @@ fun LoginScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         if (vm.isLoading) {
-            CircularProgressIndicator()
         } else {
             Text("Login Screen", fontSize = 32.sp)
             Spacer(modifier = Modifier.height(16.dp))
