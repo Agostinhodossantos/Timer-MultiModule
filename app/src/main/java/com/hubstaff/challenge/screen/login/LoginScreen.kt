@@ -12,12 +12,13 @@ import androidx.compose.ui.unit.sp
 import kotlinx.coroutines.launch
 import androidx.compose.material.TextField as TextField1
 
+
 @Composable
 fun LoginScreen() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val coroutineScope = rememberCoroutineScope()
-
+    val vm = UserState.current
     Column(
         Modifier
             .fillMaxSize()
@@ -25,7 +26,7 @@ fun LoginScreen() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        if (false) {
+        if (vm.isLoading) {
             CircularProgressIndicator()
         } else {
             Text("Login Screen", fontSize = 32.sp)
@@ -49,6 +50,7 @@ fun LoginScreen() {
             Spacer(modifier = Modifier.height(16.dp))
             Button(onClick = {
                 coroutineScope.launch {
+                    vm.signIn(email, password)
                 }
             }){
                 Text(text = "Register")
