@@ -28,7 +28,7 @@ fun LoginScreen() {
     ) {
         if (vm.isLoading) {
         } else {
-            Text("Login Screen", fontSize = 32.sp)
+            Text("Login ", fontSize = 32.sp)
             Spacer(modifier = Modifier.height(16.dp))
             TextField1(
                 value = email,
@@ -47,7 +47,8 @@ fun LoginScreen() {
                 label = { Text("Password") }
             )
             Spacer(modifier = Modifier.height(16.dp))
-            Button(onClick = {
+            Button(modifier = Modifier.width(280.dp).height(50.dp),
+                onClick = {
                 coroutineScope.launch {
                     vm.signIn(email, password)
                 }

@@ -26,8 +26,7 @@ class LoginViewModel @Inject constructor(private  val implRepository: ImplAuthMa
     }
 
     suspend fun signIn(email: String, password: String) {
-        isLoading = true
-        delay(2000)
+
         implRepository.login(email, password)
         isLoggedIn = true
         isLoading = false
