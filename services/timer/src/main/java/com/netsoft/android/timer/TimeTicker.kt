@@ -11,6 +11,7 @@ sealed interface TimeTicker {
      */
     val timerState: Flow<TimerState>
 
+
     /**
      * starts ticker with period
      * @return true if started and false if can't start, because ticker is already running
