@@ -26,6 +26,8 @@ object Versions {
     val constraint_layout="1.0.0-beta02"
     val accompanist="0.18.0"
 
+    val datastore = "1.0.0"
+
     val mockito = "3.12.4"
     val junit = "4.12"
     val espresso = "3.3.0"
@@ -75,6 +77,8 @@ object Dependencies {
     val hilt_navigation_compose =
         "androidx.hilt:hilt-navigation-compose:${Versions.hilt_navigation_compose}"
 
+    val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
+
     val coroutines_test =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     val mockk = "io.mockk:mockk:${Versions.mockk}"
@@ -85,5 +89,7 @@ object Dependencies {
     val androidx_espresso = "androidx.test.espresso:espresso-core:${Versions.espresso}"
     val androidx_ui_test_junit = "androidx.compose.ui:ui-test-junit4:${Versions.compose}"
     val androidx_ui_test_manifest = "androidx.compose.ui:ui-test-manifest:${Versions.compose}"
+
+
 }
 

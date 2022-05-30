@@ -26,6 +26,7 @@ class ComposeDependencyPlugin : BaseDependencyPlugin() {
             "implementation"(Dependencies.androidx_navigation_compose)
             "implementation"(Dependencies.androidx_compose_constraint_layout)
             "implementation"(Dependencies.accompanist_navigation_material)
+            "implementation"(Dependencies.datastore)
 
         }
     }
