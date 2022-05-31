@@ -36,5 +36,8 @@ dependencies {
     implementation(project(mapOf("path" to ":common:theme")))
     implementation(project(mapOf("path" to ":services:authentication")))
     implementation(project(mapOf("path" to ":common:resources")))
+    implementation(project(mapOf("path" to ":services:timer")))
+    implementation(com.hubstaff.gradle.deps.Dependencies.eventBus)
+
 }
 
