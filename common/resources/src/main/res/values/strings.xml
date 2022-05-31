@@ -3,4 +3,7 @@
     <string name="app_name">HsChallenge</string>
     <string name="main_screen_message">Currently it is empty and waits for your turn.\nGood luck!</string>
     <string name="label_timer">Timer</string>
+    <string name="label_time_up">Time\'s up</string>
+    <string name="label_stop">STOP</string>
+
 </resources>
