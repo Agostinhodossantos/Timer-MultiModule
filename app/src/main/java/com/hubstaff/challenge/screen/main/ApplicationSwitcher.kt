@@ -11,6 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.hubstaff.challenge.screen.login.LoginScreen
 import com.hubstaff.challenge.screen.login.UserState
+import com.hubstaff.challenge.screen.timer.TimerScreen
 
 @Composable
 fun ApplicationSwitcher() {
@@ -28,7 +29,7 @@ fun ApplicationSwitcher() {
         }
     } else {
         if (vm.isLoggedIn) {
-            LoginScreen()
+            TimerScreen()
 
         } else {
             LoginScreen()

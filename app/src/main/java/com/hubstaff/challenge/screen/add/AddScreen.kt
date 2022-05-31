@@ -26,6 +26,7 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.
 import androidx.compose.material.icons.outlined.Backspace
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable

@@ -3,6 +3,8 @@ package com.hubstaff.challenge
 import android.app.Application
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
+import androidx.lifecycle.ProcessLifecycleOwner
+
 import androidx.lifecycle.OnLifecycleEvent
 import com.netsoft.android.timer.TimerState
 import com.netsoft.android.timer.common.PreferenceManager

@@ -62,6 +62,8 @@ object Dependencies {
     val androidx_compose_ui_tooling = "androidx.compose.ui:ui-tooling:1.0.0-beta09"
     val androidx_lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     val androidx_lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    val androidx_lifecycle_process =  "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}"
+
     val androidx_activity_compose =
         "androidx.activity:activity-compose:${Versions.activity_compose}"
     val androidx_navigation_compose =
@@ -82,6 +84,8 @@ object Dependencies {
     var eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
 
     val icons = "androidx.compose.material:material-icons-core:${Versions.compose}"
+    val iconsExtended = "androidx.compose.material:material-icons-extended:${Versions.compose}"
+
 
 
 
