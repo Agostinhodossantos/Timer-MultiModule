@@ -38,6 +38,6 @@ dependencies {
     implementation(project(mapOf("path" to ":common:resources")))
     implementation(project(mapOf("path" to ":services:timer")))
     implementation(com.hubstaff.gradle.deps.Dependencies.eventBus)
-
+    implementation(com.hubstaff.gradle.deps.Dependencies.icons)
 }
 

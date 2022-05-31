@@ -42,6 +42,8 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.hubstaff.challenge.R
+import com.hubstaff.challenge.screen.component.CircularProgressWithThumb
+import com.hubstaff.theme.HubstaffTheme
 import com.netsoft.android.timer.TimerState
 import com.netsoft.android.timer.extensions.isZero
 import com.netsoft.android.timer.extensions.toHhMmSs

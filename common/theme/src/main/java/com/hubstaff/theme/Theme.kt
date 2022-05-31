@@ -49,6 +49,22 @@ fun HubstaffAppTheme(
     )
 }
 
+object HubstaffTheme {
+    val colors: HubstaffColors
+        @Composable
+        get() = LocalJettimerColors.current
+}
+
+@Composable
+fun ProvideJettimerColors(
+    colors: HubstaffColors,
+    content: @Composable () -> Unit
+) {
+    val colorPalette = remember { colors }
+    colorPalette.update(colors)
+    CompositionLocalProvider(LocalJettimerColors provides colorPalette, content = content)
+}
+
 
 @Stable
 class HubstaffColors(
@@ -76,4 +92,8 @@ class HubstaffColors(
         textVariantColor = other.textVariantColor
         isDark = other.isDark
     }
+}
+
+private val LocalJettimerColors = staticCompositionLocalOf<HubstaffColors> {
+    error("No JetsnackColorPalette provided")
 }

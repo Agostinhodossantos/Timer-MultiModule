@@ -81,6 +81,9 @@ object Dependencies {
     val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
     var eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
 
+    val icons = "androidx.compose.material:material-icons-core:${Versions.compose}"
+
+
 
     val coroutines_test =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
