@@ -1,5 +1,6 @@
 package com.netsoft.android.timer.countdown
 
+import com.netsoft.android.timer.common.FIVE_HUNDRED
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 import java.util.Timer
