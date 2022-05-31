@@ -24,4 +24,12 @@ sealed interface TimeTicker {
     fun stop()
 }
 
-data class TimerState(val value: Long, val isRunning: Boolean)
+sealed class TimerState {
+    data class Start(val duration: Long) : TimerState()
+    object Started : TimerState()
+    data class Running(val duration: Long, val tick: Long) : TimerState()
+    object Stopped : TimerState()
+    object Paused : TimerState()
+    object Finish : TimerState()
+    object Finished : TimerState()
+}
