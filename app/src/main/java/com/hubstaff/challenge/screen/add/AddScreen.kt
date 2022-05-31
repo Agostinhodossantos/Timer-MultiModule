@@ -26,15 +26,12 @@ import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.
 import androidx.compose.material.icons.outlined.Backspace
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
@@ -49,12 +46,14 @@ import com.hubstaff.challenge.screen.ThemedPreview
 import com.hubstaff.challenge.screen.component.StartButton
 import com.hubstaff.theme.HubstaffTheme
 
-import com.netsoft.android.timer.common.DataManager
-import com.netsoft.android.timer.common.EMPTY
-import com.netsoft.android.timer.extensions.fillWithZeros
-import com.netsoft.android.timer.extensions.firstInputIsZero
-import com.netsoft.android.timer.extensions.removeLast
+import com.ericktijerou.utils.common.DataManager
+import com.ericktijerou.utils.common.EMPTY
+import com.ericktijerou.utils.extensions.fillWithZeros
+import com.ericktijerou.utils.extensions.firstInputIsZero
+import com.ericktijerou.utils.extensions.removeLast
+import com.ericktijerou.utils.extensions.toMillis
 import kotlinx.coroutines.delay
+
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable

@@ -36,7 +36,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
@@ -45,8 +44,9 @@ import com.hubstaff.challenge.R
 import com.hubstaff.challenge.screen.component.CircularProgressWithThumb
 import com.hubstaff.theme.HubstaffTheme
 import com.netsoft.android.timer.TimerState
-import com.netsoft.android.timer.extensions.isZero
-import com.netsoft.android.timer.extensions.toHhMmSs
+import com.ericktijerou.utils.extensions.calculateFontSize
+import com.ericktijerou.utils.extensions.isZero
+import com.ericktijerou.utils.extensions.toHhMmSs
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalAnimationApi::class)

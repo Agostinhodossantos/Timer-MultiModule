@@ -2,10 +2,10 @@ package com.hubstaff.challenge.screen.timer
 
 import androidx.lifecycle.*
 import com.netsoft.android.timer.TimerState
-import com.netsoft.android.timer.common.*
+import com.ericktijerou.utils.common.*
 import com.netsoft.android.timer.countdown.IntermittentTimerManager
-import com.netsoft.android.timer.extensions.getPositiveValue
-import com.netsoft.android.timer.extensions.toHhMmSs
+import com.ericktijerou.utils.extensions.getPositiveValue
+import com.ericktijerou.utils.extensions.toHhMmSs
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob

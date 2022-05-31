@@ -1,4 +1,4 @@
-package com.netsoft.android.timer.common
+package com.ericktijerou.utils.common
 
 object DataManager {
     val columns by lazy { listOf(firstColumn, secondColumn, thirdColumn) }

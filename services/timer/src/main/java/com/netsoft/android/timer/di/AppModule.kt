@@ -1,8 +1,8 @@
 package com.netsoft.android.timer.di
 
 import android.content.Context
-import com.netsoft.android.timer.common.DataManager
-import com.netsoft.android.timer.common.PreferenceManager
+import com.ericktijerou.utils.common.DataManager
+import com.ericktijerou.utils.common.PreferenceManager
 import com.netsoft.android.timer.countdown.IntermittentTimerManager
 import com.netsoft.android.timer.countdown.IntermittentTimerManagerImpl
 import dagger.Module

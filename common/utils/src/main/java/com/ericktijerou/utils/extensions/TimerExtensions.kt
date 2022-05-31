@@ -1,4 +1,4 @@
-package com.netsoft.android.timer.extensions
+package com.ericktijerou.utils.extensions
 
 import android.annotation.SuppressLint
 import android.app.PendingIntent
@@ -7,10 +7,10 @@ import android.content.Intent
 import android.os.Build
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
-import com.hubstaff.challenge.screen.main.MainActivity
-import com.netsoft.android.timer.common.*
+//import androidx.compose.ui.util.fastForEachIndexed
+
+import com.ericktijerou.utils.common.*
 import java.math.BigDecimal
-import java.util.concurrent.TimeUnit
 import kotlin.math.absoluteValue
 
 
@@ -28,6 +28,18 @@ fun Float.roundUp(): Long = this.toBigDecimal().setScale(0, BigDecimal.ROUND_UP)
 fun Int.toStringOrEmpty(): String = if (this.isZero()) EMPTY else this.toString()
 fun Int.toFormattedString(): String {
     return if (absoluteValue in 9 downTo 0) "$ZERO_STRING$absoluteValue" else absoluteValue.toStringOrEmpty()
+}
+
+fun String.toMillis(): Long {
+    var timeInMillis = 0L
+//    this.fillWithZeros().chunked(2).fastForEachIndexed { i, s ->
+//        when (i) {
+//            0 -> timeInMillis += TimeUnit.HOURS.toMillis(s.toLong())
+//            1 -> timeInMillis += TimeUnit.MINUTES.toMillis(s.toLong())
+//            2 -> timeInMillis += TimeUnit.SECONDS.toMillis(s.toLong())
+//        }
+//    }
+    return timeInMillis
 }
 
 fun Int.minuteToString(hasHour: Boolean): String =
@@ -62,10 +74,10 @@ fun String.calculateFontSize(): TextUnit {
 fun isOreoPlus() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O
 
 fun Context.getLaunchIntent() =
-    packageManager.getLaunchIntentForPackage("com.ericktijerou.jettimer")
+    packageManager.getLaunchIntentForPackage("com.hubstaff.challenge")
 
 @SuppressLint("UnspecifiedImmutableFlag")
 fun Context.getOpenTimerTabIntent(): PendingIntent {
-    val intent = getLaunchIntent() ?: Intent(this, MainActivity::class.java)
+    val intent = getLaunchIntent()
     return PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 }

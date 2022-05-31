@@ -29,7 +29,7 @@ fun ApplicationSwitcher() {
         }
     } else {
         if (vm.isLoggedIn) {
-            TimerScreen()
+          ///  TimerScreen()
 
         } else {
             LoginScreen()

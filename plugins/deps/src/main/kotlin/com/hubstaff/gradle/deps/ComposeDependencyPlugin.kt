@@ -30,6 +30,7 @@ class ComposeDependencyPlugin : BaseDependencyPlugin() {
             "implementation"(Dependencies.androidx_lifecycle_process)
             "implementation"(Dependencies.icons)
             "implementation"(Dependencies.iconsExtended)
+            "implementation"(Dependencies.compose_util)
 
         }
     }

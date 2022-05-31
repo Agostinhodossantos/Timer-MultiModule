@@ -1,4 +1,4 @@
-package com.netsoft.android.timer.common
+package com.ericktijerou.utils.common
 
 import android.content.Context
 import android.content.SharedPreferences

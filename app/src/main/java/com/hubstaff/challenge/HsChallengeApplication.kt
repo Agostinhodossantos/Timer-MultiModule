@@ -7,7 +7,7 @@ import androidx.lifecycle.ProcessLifecycleOwner
 
 import androidx.lifecycle.OnLifecycleEvent
 import com.netsoft.android.timer.TimerState
-import com.netsoft.android.timer.common.PreferenceManager
+import com.ericktijerou.utils.common.PreferenceManager
 import com.netsoft.android.timer.service.startFinishedTimerService
 import com.netsoft.android.timer.service.startTimerService
 import com.netsoft.android.timer.service.stopFinishedTimerService

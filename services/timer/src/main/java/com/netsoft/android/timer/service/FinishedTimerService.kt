@@ -9,14 +9,13 @@ import androidx.core.app.NotificationCompat
 import com.netsoft.android.timer.R
 import com.netsoft.android.timer.TimerState
 import com.netsoft.android.timer.broadcast.NotificationReceiver
-import com.netsoft.android.timer.common.*
-import com.netsoft.android.timer.extensions.getOpenTimerTabIntent
-import com.netsoft.android.timer.extensions.isOreoPlus
-import com.netsoft.android.timer.extensions.toHhMmSs
+import com.ericktijerou.utils.common.*
+import com.ericktijerou.utils.extensions.getOpenTimerTabIntent
+import com.ericktijerou.utils.extensions.isOreoPlus
+import com.ericktijerou.utils.extensions.toHhMmSs
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
-import javax.inject.Inject
 
 class FinishedTimerService : Service() {
 

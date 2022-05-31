@@ -1,4 +1,4 @@
-package com.netsoft.android.timer.common
+package com.ericktijerou.utils.common
 
 const val EMPTY = ""
 const val ZERO_STRING = "0"

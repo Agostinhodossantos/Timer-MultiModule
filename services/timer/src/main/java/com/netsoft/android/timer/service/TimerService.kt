@@ -10,11 +10,11 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.netsoft.android.timer.R
 import com.netsoft.android.timer.TimerState
-import com.netsoft.android.timer.common.ONE_THOUSAND_INT
-import com.netsoft.android.timer.common.TIMER_RUNNING_ID
-import com.netsoft.android.timer.common.ZERO_LONG
-import com.netsoft.android.timer.extensions.getOpenTimerTabIntent
-import com.netsoft.android.timer.extensions.isOreoPlus
+import com.ericktijerou.utils.common.ONE_THOUSAND_INT
+import com.ericktijerou.utils.common.TIMER_RUNNING_ID
+import com.ericktijerou.utils.common.ZERO_LONG
+import com.ericktijerou.utils.extensions.getOpenTimerTabIntent
+import com.ericktijerou.utils.extensions.isOreoPlus
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
