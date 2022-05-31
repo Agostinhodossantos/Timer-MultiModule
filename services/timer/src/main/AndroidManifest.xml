@@ -2,4 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.netsoft.android.timer">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application>
+        <service android:name="com.netsoft.android.timer.service.TimerService" />
+        <service android:name="com.netsoft.android.timer.service.FinishedTimerService" />
+
+        <receiver android:name="com.netsoft.android.timer.broadcast.NotificationReceiver" />
+    </application>
 </manifest>

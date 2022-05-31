@@ -8,6 +8,7 @@ import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.netsoft.android.timer.R
 import com.netsoft.android.timer.TimerState
+import com.netsoft.android.timer.broadcast.NotificationReceiver
 import com.netsoft.android.timer.common.*
 import com.netsoft.android.timer.extensions.getOpenTimerTabIntent
 import com.netsoft.android.timer.extensions.isOreoPlus
