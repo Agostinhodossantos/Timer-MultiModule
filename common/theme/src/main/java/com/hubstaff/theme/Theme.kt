@@ -2,17 +2,13 @@ package com.hubstaff.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
 
-private val DarkColorPalette = darkColors(
-    primary = HsBlue,
-    onPrimary = Color.White,
-    background = Color.White,
-    onBackground = HsDarkGrey,
-)
+
 
 private val LightColorPalette = lightColors(
     primary = HsBlue,
@@ -30,6 +26,43 @@ private val LightColorPalette = lightColors(
     */
 )
 
+private val DarkColorPalette = darkColors(
+    primary = BlackLight,
+    primaryVariant = BlackLight,
+    secondary = Teal200,
+    secondaryVariant = TimerActiveDark,
+    background = BlackLight,
+    surface = Color.Black,
+    onPrimary = Color.White,
+    onSecondary = Color.White,
+    onBackground = Color.White,
+    onSurface = Color.White
+)
+
+private val DarkTimerColorPalette = HubstaffColors(
+    textPrimaryColor = Color.White,
+    textSecondaryColor = TextSecondaryDark,
+    searchBoxColor = GraySearchBoxDark,
+    textVariantColor = Color.Black,
+    isDark = true
+)
+@Composable
+fun HubstaffMainTheme(content: @Composable () -> Unit) {
+    val sysUiController = LocalSysUiController.current
+    SideEffect {
+        sysUiController.setSystemBarsColor(
+            color = DarkColorPalette.primary
+        )
+    }
+    ProvideJettimerColors(DarkTimerColorPalette) {
+        MaterialTheme(
+            colors = DarkColorPalette,
+            typography = typography,
+            shapes = Shapes,
+            content = content
+        )
+    }
+}
 @Composable
 fun HubstaffAppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),

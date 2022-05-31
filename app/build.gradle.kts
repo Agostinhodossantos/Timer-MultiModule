@@ -40,5 +40,6 @@ dependencies {
     implementation(com.hubstaff.gradle.deps.Dependencies.icons)
     implementation(com.hubstaff.gradle.deps.Dependencies.eventBus)
     implementation("androidx.lifecycle:lifecycle-process:2.4.1")
+    implementation(project(mapOf("path" to ":common:utils")))
 }
 

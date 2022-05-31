@@ -31,6 +31,7 @@ class ComposeDependencyPlugin : BaseDependencyPlugin() {
             "implementation"(Dependencies.icons)
             "implementation"(Dependencies.iconsExtended)
             "implementation"(Dependencies.compose_util)
+            "implementation"(Dependencies.accompanist_insets)
 
         }
     }

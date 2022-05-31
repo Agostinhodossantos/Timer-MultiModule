@@ -56,6 +56,8 @@ object Dependencies {
     val androidx_compose_material_icons_ext = "androidx.compose.material:material-icons-extended:${Versions.material}"
     val androidx_compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:${Versions.constraint_layout}"
     val accompanist_navigation_material = "com.google.accompanist:accompanist-navigation-material:${Versions.accompanist}"
+    val  accompanist_insets = "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
+
     val compose_util = "androidx.compose.ui:ui-util:${Versions.compose}"
 
     val androidx_compose_ui = "androidx.compose.ui:ui:${Versions.compose}"
