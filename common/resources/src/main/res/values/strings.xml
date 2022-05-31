@@ -5,5 +5,7 @@
     <string name="label_timer">Timer</string>
     <string name="label_time_up">Time\'s up</string>
     <string name="label_stop">STOP</string>
+    <string name="label_start">Start</string>
+
 
 </resources>
