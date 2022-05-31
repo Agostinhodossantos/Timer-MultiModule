@@ -81,6 +81,7 @@ object Dependencies {
     val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
     var eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
 
+
     val coroutines_test =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     val mockk = "io.mockk:mockk:${Versions.mockk}"
