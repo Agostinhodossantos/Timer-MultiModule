@@ -36,6 +36,7 @@ object Versions {
     val mockk = "1.12.0"
 
     val coroutines = "1.4.3"
+    val eventBus = "3.2.0"
 
     val timber = "4.7.1"
 
@@ -78,6 +79,7 @@ object Dependencies {
         "androidx.hilt:hilt-navigation-compose:${Versions.hilt_navigation_compose}"
 
     val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
+    var eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
 
     val coroutines_test =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"

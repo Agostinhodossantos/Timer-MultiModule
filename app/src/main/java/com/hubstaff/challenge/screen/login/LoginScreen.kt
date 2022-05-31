@@ -18,7 +18,9 @@ fun LoginScreen() {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val coroutineScope = rememberCoroutineScope()
+    val focusRequester = FocusRequester()
     val vm = UserState.current
+
     Column(
         Modifier
             .fillMaxSize()
