@@ -1,5 +1,6 @@
 package com.hubstaff.challenge.screen.timer
 
+import androidx.activity.viewModels
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.animateFloatAsState
@@ -47,6 +48,9 @@ import com.netsoft.android.timer.TimerState
 import com.ericktijerou.utils.extensions.calculateFontSize
 import com.ericktijerou.utils.extensions.isZero
 import com.ericktijerou.utils.extensions.toHhMmSs
+import com.hubstaff.challenge.screen.login.LoginScreen
+import com.hubstaff.challenge.screen.login.LoginViewModel
+import com.hubstaff.challenge.screen.login.UserState
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -55,8 +59,13 @@ fun TimerScreen(
     viewModel: TimerViewModel,
     modifier: Modifier,
     autoPlay: Boolean,
-    navigateToAdd: () -> Unit
+    navigateToAdd: () -> Unit,
+    navigateToLogin: () -> Unit
 ) {
+    val vm = UserState.current
+    if (!vm.isLoggedIn) {
+        navigateToLogin()
+    }
     val time = viewModel.getTimer()
     if (time.isZero()) {
         navigateToAdd()

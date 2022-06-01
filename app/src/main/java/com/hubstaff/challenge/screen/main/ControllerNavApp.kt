@@ -27,6 +27,7 @@ import com.ericktijerou.utils.common.hiltNavGraphViewModel
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.hubstaff.challenge.R
 import com.hubstaff.challenge.screen.add.AddScreen
+import com.hubstaff.challenge.screen.login.LoginScreen
 import com.hubstaff.challenge.screen.timer.TimerScreen
 import com.hubstaff.theme.HubstaffTheme
 
@@ -49,7 +50,12 @@ fun ControllerNavApp() {
                         TimerScreen(
                             viewModel = it.hiltNavGraphViewModel(),
                             modifier = modifier,
-                            autoPlay = autoPlay
+                            autoPlay = autoPlay,
+                            {
+                                navController.navigate(route = Screen.Login.route) {
+                                popUpTo(Screen.Main.route) { inclusive = true }
+                            }
+                            }
                         ) {
                             navController.navigate(route = Screen.AddTimer.route) {
                                 popUpTo(Screen.Main.route) { inclusive = true }
@@ -60,6 +66,13 @@ fun ControllerNavApp() {
                         AddScreen(viewModel = it.hiltNavGraphViewModel(), modifier = modifier) {
                             navController.navigate(route = Screen.Main.route(true)) {
                                 popUpTo(Screen.AddTimer.route) { inclusive = true }
+                            }
+                        }
+                    }
+                    composable(Screen.Login.route) {
+                        LoginScreen() {
+                            navController.navigate(route = Screen.Main.route(true)) {
+                                popUpTo(Screen.Login.route) { inclusive = true }
                             }
                         }
                     }

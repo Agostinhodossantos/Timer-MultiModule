@@ -15,7 +15,7 @@ import androidx.compose.material.TextField as TextField1
 
 
 @Composable
-fun LoginScreen() {
+fun LoginScreen(navigateToMain: () -> Unit) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     val coroutineScope = rememberCoroutineScope()
@@ -54,6 +54,7 @@ fun LoginScreen() {
                 onClick = {
                 coroutineScope.launch {
                     vm.signIn(email, password)
+                    navigateToMain()
                 }
             }){
                 Text(text = "Register")
