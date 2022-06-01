@@ -6,7 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
 import androidx.compose.ui.tooling.preview.Preview
+import com.ericktijerou.utils.common.LocalSysUiController
+import com.ericktijerou.utils.common.SystemUiController
 import com.hubstaff.challenge.screen.login.LoginViewModel
 import com.hubstaff.challenge.screen.login.UserState
 import com.hubstaff.challenge.screen.main.ApplicationSwitcher
@@ -21,7 +24,8 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             HubstaffTheme {
-                CompositionLocalProvider(UserState provides loginViewModel) {
+                val systemUiController = remember { SystemUiController(window) }
+                CompositionLocalProvider(LocalSysUiController provides systemUiController) {
                     ControllerNavApp()
                 }
             }
