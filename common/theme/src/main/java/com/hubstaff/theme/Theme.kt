@@ -7,24 +7,8 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
+import com.ericktijerou.utils.common.LocalSysUiController
 
-
-
-private val LightColorPalette = lightColors(
-    primary = HsBlue,
-    onPrimary = Color.White,
-    background = Color.White,
-    onBackground = HsDarkGrey,
-
-    /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
-)
 
 private val DarkColorPalette = darkColors(
     primary = BlackLight,
@@ -46,15 +30,16 @@ private val DarkTimerColorPalette = HubstaffColors(
     textVariantColor = Color.Black,
     isDark = true
 )
+
 @Composable
-fun HubstaffMainTheme(content: @Composable () -> Unit) {
+fun HubstaffTheme(content: @Composable () -> Unit) {
     val sysUiController = LocalSysUiController.current
     SideEffect {
         sysUiController.setSystemBarsColor(
             color = DarkColorPalette.primary
         )
     }
-    ProvideJettimerColors(DarkTimerColorPalette) {
+    ProvideHubstaffColors(DarkTimerColorPalette) {
         MaterialTheme(
             colors = DarkColorPalette,
             typography = typography,
@@ -63,41 +48,22 @@ fun HubstaffMainTheme(content: @Composable () -> Unit) {
         )
     }
 }
-@Composable
-fun HubstaffAppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
-) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
-
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
-}
 
 object HubstaffTheme {
     val colors: HubstaffColors
         @Composable
-        get() = LocalJettimerColors.current
+        get() = LocalHubstaffColors.current
 }
 
 @Composable
-fun ProvideJettimerColors(
+fun ProvideHubstaffColors(
     colors: HubstaffColors,
     content: @Composable () -> Unit
 ) {
     val colorPalette = remember { colors }
     colorPalette.update(colors)
-    CompositionLocalProvider(LocalJettimerColors provides colorPalette, content = content)
+    CompositionLocalProvider(LocalHubstaffColors provides colorPalette, content = content)
 }
-
 
 @Stable
 class HubstaffColors(
@@ -127,6 +93,6 @@ class HubstaffColors(
     }
 }
 
-private val LocalJettimerColors = staticCompositionLocalOf<HubstaffColors> {
+private val LocalHubstaffColors = staticCompositionLocalOf<HubstaffColors> {
     error("No JetsnackColorPalette provided")
 }

@@ -21,5 +21,7 @@ apply(plugin = "com.hubstaff.gradle.common.template")
 
 dependencies {
     implementation(project(mapOf("path" to ":common:resources")))
+    implementation(project(mapOf("path" to ":common:utils")))
+
 }
 

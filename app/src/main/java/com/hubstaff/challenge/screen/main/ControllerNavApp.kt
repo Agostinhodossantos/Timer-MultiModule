@@ -20,25 +20,21 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navArgument
-import androidx.navigation.compose.navigate
-import androidx.navigation.compose.popUpTo
 import androidx.navigation.compose.rememberNavController
 import com.ericktijerou.utils.common.Screen
 import com.ericktijerou.utils.common.Screen.Main.ARG_AUTO_PLAY
 import com.ericktijerou.utils.common.hiltNavGraphViewModel
-//import dev.chrisbanes.accompanist.insets.ProvideWindowInsets
-
 import com.google.accompanist.insets.ProvideWindowInsets
 import com.hubstaff.challenge.R
 import com.hubstaff.challenge.screen.add.AddScreen
-import com.hubstaff.theme.HubstaffAppTheme
-import com.hubstaff.theme.HubstaffMainTheme
+import com.hubstaff.challenge.screen.timer.TimerScreen
 import com.hubstaff.theme.HubstaffTheme
+
 
 @Composable
 fun ControllerNavApp() {
     ProvideWindowInsets {
-        HubstaffMainTheme(
+        HubstaffTheme {
             Scaffold(
                 topBar = { MainAppBar() }
             ) { innerPadding ->
@@ -50,7 +46,7 @@ fun ControllerNavApp() {
                         arguments = listOf(navArgument(ARG_AUTO_PLAY) { type = NavType.BoolType })
                     ) {
                         val autoPlay = it.arguments?.getBoolean(ARG_AUTO_PLAY) ?: false
-                        MainScreen(
+                        TimerScreen(
                             viewModel = it.hiltNavGraphViewModel(),
                             modifier = modifier,
                             autoPlay = autoPlay
