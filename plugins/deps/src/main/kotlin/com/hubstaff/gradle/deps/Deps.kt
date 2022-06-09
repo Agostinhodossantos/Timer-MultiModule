@@ -18,7 +18,7 @@ object Versions {
     val androidx_core = "1.5.0"
     val app_compat = "1.3.0"
     val material = "1.3.0"
-    val compose = "1.0.2"
+    val compose = "1.0.3"
     val activity_compose = "1.3.1"
     val lifecycle = "2.4.0-alpha03"
     val nav_compose = "2.4.0-alpha05"
