@@ -1,5 +1,4 @@
-package com.hubstaff.challenge.screen.component
-
+package  com.hubstaff.challenge.screen.component
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.focusable

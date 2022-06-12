@@ -3,14 +3,13 @@ package com.hubstaff.challenge
 import android.app.Application
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
-import androidx.lifecycle.ProcessLifecycleOwner
-
 import androidx.lifecycle.OnLifecycleEvent
-import com.netsoft.android.timer.TimerState
-import com.ericktijerou.utils.common.PreferenceManager
-import com.netsoft.android.timer.service.startFinishedTimerService
+import androidx.lifecycle.ProcessLifecycleOwner
+import com.hubstaff.challenge.service.startFinishedTimerService
+import com.hubstaff.challenge.service.stopFinishedTimerService
+import com.netsoft.android.timer.manager.PreferenceManager
+import com.hubstaff.utils.common.TimerState
 import com.netsoft.android.timer.service.startTimerService
-import com.netsoft.android.timer.service.stopFinishedTimerService
 import com.netsoft.android.timer.service.stopTimerService
 import dagger.hilt.android.HiltAndroidApp
 import org.greenrobot.eventbus.EventBus
@@ -34,6 +33,7 @@ class HsChallengeApplication : Application(), LifecycleObserver {
         if (BuildConfig.DEBUG) {
             Timber.plant(DebugTree())
         }
+
         ProcessLifecycleOwner.get().lifecycle.addObserver(this)
         EventBus.getDefault().register(this)
         if (!preferences.isTimerRunning) {
@@ -90,4 +90,3 @@ class HsChallengeApplication : Application(), LifecycleObserver {
         timer?.cancel()
     }
 }
-

@@ -1,4 +1,5 @@
-package com.hubstaff.challenge.screen.component
+
+package  com.hubstaff.challenge.screen.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
@@ -20,6 +21,8 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.hubstaff.challenge.R
+import com.hubstaff.theme.HubstaffTheme
+
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
@@ -43,6 +46,7 @@ fun StartButton(visible: Boolean, modifier: Modifier, onClick: () -> Unit) {
                 Icon(
                     imageVector = Icons.Outlined.PlayArrow,
                     contentDescription = stringResource(R.string.label_start),
+                    tint = HubstaffTheme.colors.textVariantColor
                 )
             }
         }

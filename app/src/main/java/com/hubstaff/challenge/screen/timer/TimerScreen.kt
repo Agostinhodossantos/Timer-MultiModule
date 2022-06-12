@@ -1,6 +1,5 @@
-package com.hubstaff.challenge.screen.timer
+package  com.hubstaff.challenge.screen.timer
 
-import androidx.activity.viewModels
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.core.animateFloatAsState
@@ -9,19 +8,9 @@ import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.BoxWithConstraints
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Button
-import androidx.compose.material.ContentAlpha
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.ProgressIndicatorDefaults
-import androidx.compose.material.Text
-import androidx.compose.material.TextButton
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Pause
 import androidx.compose.material.icons.outlined.PlayArrow
@@ -37,19 +26,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.hubstaff.challenge.R
 import com.hubstaff.challenge.screen.component.CircularProgressWithThumb
+import com.hubstaff.challenge.screen.ThemedPreview
+import com.hubstaff.utils.common.*
 import com.hubstaff.theme.HubstaffTheme
-import com.netsoft.android.timer.TimerState
-import com.ericktijerou.utils.extensions.calculateFontSize
-import com.ericktijerou.utils.extensions.isZero
-import com.ericktijerou.utils.extensions.toHhMmSs
-import com.hubstaff.challenge.screen.login.LoginScreen
-import com.hubstaff.challenge.screen.login.LoginViewModel
+import com.hubstaff.utils.extensions.calculateFontSize
+import com.hubstaff.utils.extensions.isZero
+import com.hubstaff.utils.extensions.toHhMmSs
+
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -337,5 +327,39 @@ fun ActionButtons(
                 )
             )
         }
+    }
+}
+
+@Preview("Main screen body")
+@Composable
+fun PreviewHomeScreenBody() {
+    ThemedPreview {
+        MainScreenBody(
+            time = 36000,
+            tick = 3000,
+            timerScreenState = TimerState.Started,
+            timerVisibility = true,
+            onActionClick = {},
+            onDelete = {},
+            onOptionTimerClick = {},
+            timerLabel = EMPTY
+        )
+    }
+}
+
+@Preview("Main screen body dark")
+@Composable
+fun PreviewHomeScreenBodyDark() {
+    ThemedPreview {
+        MainScreenBody(
+            time = 36000,
+            tick = 3000,
+            timerScreenState = TimerState.Started,
+            timerVisibility = true,
+            onActionClick = {},
+            onDelete = {},
+            onOptionTimerClick = {},
+            timerLabel = EMPTY
+        )
     }
 }

@@ -1,20 +1,24 @@
-package com.hubstaff.challenge.screen.timer
+package  com.hubstaff.challenge.screen.timer
 
-import androidx.lifecycle.*
-import com.netsoft.android.timer.TimerState
-import com.ericktijerou.utils.common.*
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.liveData
+import com.netsoft.android.timer.manager.PreferenceManager
+import com.hubstaff.utils.common.*
+import com.hubstaff.utils.extensions.getPositiveValue
+import com.hubstaff.utils.extensions.toHhMmSs
 import com.netsoft.android.timer.countdown.IntermittentTimerManager
-import com.ericktijerou.utils.extensions.getPositiveValue
-import com.ericktijerou.utils.extensions.toHhMmSs
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
+import kotlinx.coroutines.flow.collect
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 import javax.inject.Inject
-import kotlinx.coroutines.flow.collect
-
 
 @HiltViewModel
 class TimerViewModel @Inject constructor(
