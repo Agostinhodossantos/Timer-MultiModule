@@ -1,4 +1,4 @@
-package com.ericktijerou.utils.common
+package  com.hubstaff.utils.common
 
 const val EMPTY = ""
 const val ZERO_STRING = "0"

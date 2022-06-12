@@ -1,4 +1,4 @@
-package com.ericktijerou.utils
+package com.hubstaff.utils
 
 import org.junit.Test
 

@@ -7,12 +7,11 @@ import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
 import com.netsoft.android.timer.R
-import com.netsoft.android.timer.TimerState
 import com.netsoft.android.timer.broadcast.NotificationReceiver
-import com.ericktijerou.utils.common.*
-import com.ericktijerou.utils.extensions.getOpenTimerTabIntent
-import com.ericktijerou.utils.extensions.isOreoPlus
-import com.ericktijerou.utils.extensions.toHhMmSs
+import com.hubstaff.utils.common.*
+import com.hubstaff.utils.extensions.getOpenTimerTabIntent
+import com.hubstaff.utils.extensions.isOreoPlus
+import com.hubstaff.utils.extensions.toHhMmSs
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode

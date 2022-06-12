@@ -31,16 +31,17 @@ class ImplAuthManager(private val context: Context) : AuthenticationManager {
         get() = _loginState
 
 
-     override suspend fun getUser() = context.datastore.data.map { user ->
-        LoginResult(user[EMAIL]!!.isNotEmpty(),)
+    override suspend fun getUser() = context.datastore.data.map { user ->
+        var result = if (user[EMAIL].isNullOrEmpty()) false else true
+        LoginResult( result)
     }
 
     override suspend fun login(email: String, password: String): LoginResult {
-        context.datastore.edit { phonebooks->
-            phonebooks[EMAIL] = email
-            phonebooks[PASSWORD]= password
+        context.datastore.edit { user ->
+            user[EMAIL] = email
+            user[PASSWORD]= password
         }
         _loginState.value = true
-       return LoginResult(true)
+        return LoginResult(true)
     }
 }

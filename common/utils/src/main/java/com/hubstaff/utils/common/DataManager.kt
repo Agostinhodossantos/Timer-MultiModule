@@ -1,4 +1,4 @@
-package com.ericktijerou.utils.common
+package  com.hubstaff.utils.common
 
 object DataManager {
     val columns by lazy { listOf(firstColumn, secondColumn, thirdColumn) }
