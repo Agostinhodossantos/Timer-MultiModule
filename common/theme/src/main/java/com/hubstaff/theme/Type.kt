@@ -9,7 +9,7 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 
 private val fonts = FontFamily(
-    Font(R.font.lato_regular, FontWeight.Normal),
+    Font(R. font.lato_regular, FontWeight.Normal),
     Font(R.font.lato_medium, FontWeight.W500),
     Font(R.font.lato_bold, FontWeight.Bold)
 )

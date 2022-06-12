@@ -18,7 +18,6 @@ apply(plugin = "com.hubstaff.gradle.common.template")
 apply(plugin = "com.hubstaff.gradle.testing.dependency")
 
 dependencies {
-    implementation(com.hubstaff.gradle.deps.Dependencies.androidx_compose_ui_tooling)
-    implementation(com.hubstaff.gradle.deps.Dependencies.datastore)
+
 }
 

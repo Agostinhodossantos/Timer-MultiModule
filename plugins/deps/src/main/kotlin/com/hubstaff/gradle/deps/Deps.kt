@@ -25,6 +25,7 @@ object Versions {
     val hilt_navigation_compose = "1.0.0-alpha03"
     val constraint_layout="1.0.0-beta02"
     val accompanist="0.18.0"
+    val ui_tooling = "1.0.0-beta09"
 
     val datastore = "1.0.0"
 
@@ -53,20 +54,18 @@ object Dependencies {
     val google_material = "com.google.android.material:material:${Versions.material}"
     val androidx_compose_animation = "androidx.compose.animation:animation:${Versions.material}"
     val androidx_compose_material_icons = "androidx.compose.material:material-icons-core:${Versions.material}"
-    val androidx_compose_material_icons_ext = "androidx.compose.material:material-icons-extended:${Versions.material}"
+    val androidx_compose_material_icons_ext = "androidx.compose.material:material-icons-extended:${Versions.compose}"
     val androidx_compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:${Versions.constraint_layout}"
     val accompanist_navigation_material = "com.google.accompanist:accompanist-navigation-material:${Versions.accompanist}"
-    val  accompanist_insets = "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
-
-    val compose_util = "androidx.compose.ui:ui-util:${Versions.compose}"
-
     val androidx_compose_ui = "androidx.compose.ui:ui:${Versions.compose}"
     val androidx_compose_material = "androidx.compose.material:material:${Versions.compose}"
-//    val androidx_compose_ui_tooling = "androidx.compose.ui:ui-tooling:${Versions.compose}"
-    val androidx_compose_ui_tooling = "androidx.compose.ui:ui-tooling:1.0.0-beta09"
+    val uiUtil = "androidx.compose.ui:ui-util:${Versions.compose}"
+
+    var accompanist_insets = "com.google.accompanist:accompanist-insets:${Versions.accompanist}"
+    val androidx_compose_ui_tooling = "androidx.compose.ui:ui-tooling:${Versions.ui_tooling}"
     val androidx_lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     val androidx_lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
-    val androidx_lifecycle_process =  "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}"
+    val androidx_lifecycle_process = "androidx.lifecycle:lifecycle-process:${Versions.lifecycle}"
 
     val androidx_activity_compose =
         "androidx.activity:activity-compose:${Versions.activity_compose}"
@@ -86,12 +85,6 @@ object Dependencies {
 
     val datastore = "androidx.datastore:datastore-preferences:${Versions.datastore}"
     var eventBus = "org.greenrobot:eventbus:${Versions.eventBus}"
-
-    val icons = "androidx.compose.material:material-icons-core:${Versions.compose}"
-    val iconsExtended = "androidx.compose.material:material-icons-extended:${Versions.compose}"
-
-
-
 
     val coroutines_test =
         "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"

@@ -25,6 +25,10 @@
             </intent-filter>
         </activity>
 
+        <service android:name="com.netsoft.android.timer.service.TimerService" />
+        <service android:name="com.hubstaff.challenge.service.FinishedTimerService" />
+
+        <receiver android:name="com.netsoft.android.timer.broadcast.NotificationReceiver" />
 
     </application>
 

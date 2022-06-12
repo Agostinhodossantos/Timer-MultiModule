@@ -2,25 +2,26 @@ import com.hubstaff.gradle.deps.Config
 plugins {
     id("com.android.library")
     id("kotlin-android")
-    id("dagger.hilt.android.plugin")
-    kotlin("kapt")
-    id("com.hubstaff.gradle.hilt.dependency")
-    id("com.hubstaff.gradle.common.dependency")
+    id("com.hubstaff.gradle.compose.dependency")
 }
 
 android {
     kotlinOptions {
         jvmTarget = Config.kotlin_jvm
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = com.hubstaff.gradle.deps.Versions.compose
+    }
 }
 
 apply(plugin = "com.hubstaff.gradle.common.template")
 apply(plugin = "com.hubstaff.gradle.testing.dependency")
-apply(plugin = "com.hubstaff.gradle.common.template")
+
 
 dependencies {
-    implementation(com.hubstaff.gradle.deps.Dependencies.androidx_compose_ui_tooling)
-    implementation(com.hubstaff.gradle.deps.Dependencies.eventBus)
     implementation(project(mapOf("path" to ":common:resources")))
 }
 

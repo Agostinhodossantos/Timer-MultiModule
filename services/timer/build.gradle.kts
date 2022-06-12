@@ -17,8 +17,6 @@ android {
 apply(plugin = "com.hubstaff.gradle.common.template")
 
 dependencies {
-    implementation(com.hubstaff.gradle.deps.Dependencies.androidx_compose_ui_tooling)
-    implementation(com.hubstaff.gradle.deps.Dependencies.eventBus)
     implementation(project(mapOf("path" to ":common:resources")))
     implementation(project(mapOf("path" to ":common:utils")))
 }

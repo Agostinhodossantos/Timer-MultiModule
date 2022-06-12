@@ -20,6 +20,7 @@ class ComposeDependencyPlugin : BaseDependencyPlugin() {
             "implementation"(Dependencies.androidx_compose_material)
             "implementation"(Dependencies.androidx_compose_ui_tooling)
             "implementation"(Dependencies.androidx_lifecycle_runtime)
+            "implementation"(Dependencies.androidx_lifecycle_process)
             "implementation"(Dependencies.androidx_lifecycle_livedata)
             "implementation"(Dependencies.androidx_activity_compose)
             "implementation"(Dependencies.androidx_compose_livedata)
@@ -27,12 +28,9 @@ class ComposeDependencyPlugin : BaseDependencyPlugin() {
             "implementation"(Dependencies.androidx_compose_constraint_layout)
             "implementation"(Dependencies.accompanist_navigation_material)
             "implementation"(Dependencies.datastore)
-            "implementation"(Dependencies.androidx_lifecycle_process)
-            "implementation"(Dependencies.icons)
-            "implementation"(Dependencies.iconsExtended)
-            "implementation"(Dependencies.compose_util)
+            "implementation"(Dependencies.androidx_compose_material_icons_ext)
             "implementation"(Dependencies.accompanist_insets)
-
+            "implementation"(Dependencies.uiUtil)
         }
     }
 }
