@@ -1,9 +1,9 @@
 package com.hubstaff.challenge.screen.login
 
-import androidx.compose.runtime.compositionLocalOf
-import androidx.compose.runtime.getValue
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.netsoft.android.authentication.repository.ImplAuthManager
@@ -18,40 +18,46 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(private  val implRepository: ImplAuthManager): ViewModel() {
 
-    var isLoggedIn by mutableStateOf(false)
-    var isLoading by mutableStateOf(true)
+    private val _state = mutableStateOf<LoginUiState>(LoginUiState.Empty)
+    val state: State<LoginUiState> = _state
+
+    suspend fun signIn(email: String, password: String) {
+        _state.value = LoginUiState.Loading
+        implRepository.login(email, password)
+        _state.value = LoginUiState.Success
+    }
 
     init {
         retrieveUser()
     }
 
-    suspend fun signIn(email: String, password: String) {
-
-        implRepository.login(email, password)
-        isLoggedIn = true
-        isLoading = false
-    }
-
     fun retrieveUser(){
+
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 implRepository.getUser().collect {
-                    Timber.d("RETURN $it.toString()")
                     withContext(Dispatchers.Main) {
-                        isLoggedIn = true
-                        isLoading = false
+                        if (it.success) {
+                            _state.value = LoginUiState.Success
+                        } else {
+                            _state.value  = LoginUiState.Error(it.error.toString())
+                        }
                     }
                 }
             } catch (e: Exception) {
-                Timber.d("RETUR $e")
-                isLoggedIn = false
-                isLoading = false
+                Timber.d("RETURN $e")
+                _state.value  = LoginUiState.Error(e.toString())
             }
 
         }
     }
 
+    sealed class LoginUiState {
+        object Success : LoginUiState()
+        data class Error(val message: String) : LoginUiState()
+        object Loading : LoginUiState()
+        object Empty : LoginUiState()
+    }
 }
 
-val UserState = compositionLocalOf<LoginViewModel> { error("LoginViewModel Context Not Found!") }
 

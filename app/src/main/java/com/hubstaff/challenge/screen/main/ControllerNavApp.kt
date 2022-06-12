@@ -34,46 +34,46 @@ import com.hubstaff.theme.HubstaffTheme
 
 @Composable
 fun ControllerNavApp() {
-    ProvideWindowInsets {
-        HubstaffTheme {
-            Scaffold(
-                topBar = { MainAppBar() }
-            ) { innerPadding ->
-                val modifier = Modifier.padding(innerPadding)
-                val navController = rememberNavController()
-                NavHost(navController, startDestination = Screen.Main.route) {
-                    composable(
-                        Screen.Main.route,
-                        arguments = listOf(navArgument(ARG_AUTO_PLAY) { type = NavType.BoolType })
+    HubstaffTheme {
+        Scaffold(
+        ) { innerPadding ->
+            val modifier = Modifier.padding(innerPadding)
+            val navController = rememberNavController()
+
+
+            NavHost(navController, startDestination = Screen.Main.route) {
+                composable(
+                    Screen.Main.route,
+                    arguments = listOf(navArgument(ARG_AUTO_PLAY) { type = NavType.BoolType })
+                ) {
+                    val autoPlay = it.arguments?.getBoolean(ARG_AUTO_PLAY) ?: false
+                    TimerScreen(
+                        viewModel = it.hiltNavGraphViewModel(),
+                        modifier = modifier,
+                        autoPlay = autoPlay,
                     ) {
-                        val autoPlay = it.arguments?.getBoolean(ARG_AUTO_PLAY) ?: false
-                        TimerScreen(
-                            viewModel = it.hiltNavGraphViewModel(),
-                            modifier = modifier,
-                            autoPlay = autoPlay,
-                            {
-                                navController.navigate(route = Screen.Login.route) {
-                                popUpTo(Screen.Main.route) { inclusive = true }
-                            }
-                            }
-                        ) {
-                            navController.navigate(route = Screen.AddTimer.route) {
-                                popUpTo(Screen.Main.route) { inclusive = true }
-                            }
+                        navController.navigate(route = Screen.AddTimer.route) {
+                            popUpTo(Screen.Main.route) { inclusive = true }
                         }
                     }
-                    composable(Screen.AddTimer.route) {
-                        AddScreen(viewModel = it.hiltNavGraphViewModel(), modifier = modifier) {
+                }
+                composable(Screen.AddTimer.route) {
+                    AddScreen(viewModel = it.hiltNavGraphViewModel(), modifier = modifier,
+                        {
                             navController.navigate(route = Screen.Main.route(true)) {
                                 popUpTo(Screen.AddTimer.route) { inclusive = true }
                             }
-                        }
-                    }
-                    composable(Screen.Login.route) {
-                        LoginScreen() {
-                            navController.navigate(route = Screen.Main.route(true)) {
-                                popUpTo(Screen.Login.route) { inclusive = true }
+                        },
+                        {
+                            navController.navigate(route = Screen.Login.route) {
+                                popUpTo(Screen.AddTimer.route) { inclusive = true }
                             }
+                        })
+                }
+                composable(Screen.Login.route) {
+                    LoginScreen() {
+                        navController.navigate(route = Screen.AddTimer.route) {
+                            popUpTo(Screen.Login.route) { inclusive = true }
                         }
                     }
                 }
@@ -81,6 +81,7 @@ fun ControllerNavApp() {
         }
     }
 }
+
 
 @Composable
 fun MainAppBar(

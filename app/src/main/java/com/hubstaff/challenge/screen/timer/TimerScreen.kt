@@ -50,7 +50,6 @@ import com.ericktijerou.utils.extensions.isZero
 import com.ericktijerou.utils.extensions.toHhMmSs
 import com.hubstaff.challenge.screen.login.LoginScreen
 import com.hubstaff.challenge.screen.login.LoginViewModel
-import com.hubstaff.challenge.screen.login.UserState
 import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalAnimationApi::class)
@@ -60,12 +59,8 @@ fun TimerScreen(
     modifier: Modifier,
     autoPlay: Boolean,
     navigateToAdd: () -> Unit,
-    navigateToLogin: () -> Unit
 ) {
-    val vm = UserState.current
-    if (!vm.isLoggedIn) {
-        navigateToLogin()
-    }
+
     val time = viewModel.getTimer()
     if (time.isZero()) {
         navigateToAdd()

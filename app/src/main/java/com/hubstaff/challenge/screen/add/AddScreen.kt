@@ -1,4 +1,4 @@
-package com.hubstaff.challenge.screen.add
+package  com.hubstaff.challenge.screen.add
 
 
 import androidx.compose.animation.AnimatedVisibility
@@ -38,24 +38,45 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import com.hubstaff.challenge.R
-import com.hubstaff.challenge.screen.ThemedPreview
+import com.hubstaff.utils.common.DataManager
 import com.hubstaff.challenge.screen.component.StartButton
+import com.hubstaff.challenge.screen.login.LoginViewModel
+import com.hubstaff.challenge.screen.ThemedPreview
+import com.hubstaff.utils.common.*
 import com.hubstaff.theme.HubstaffTheme
+import com.hubstaff.utils.extensions.fillWithZeros
+import com.hubstaff.utils.extensions.firstInputIsZero
+import com.hubstaff.utils.extensions.removeLast
+import com.hubstaff.utils.extensions.toMillis
 
-import com.ericktijerou.utils.common.DataManager
-import com.ericktijerou.utils.common.EMPTY
-import com.ericktijerou.utils.extensions.fillWithZeros
-import com.ericktijerou.utils.extensions.firstInputIsZero
-import com.ericktijerou.utils.extensions.removeLast
-import com.ericktijerou.utils.extensions.toMillis
 import kotlinx.coroutines.delay
-
 
 @OptIn(ExperimentalAnimationApi::class)
 @Composable
-fun AddScreen(viewModel: AddViewModel, modifier: Modifier, navigateToMain: () -> Unit) {
+fun AddScreen(viewModel: AddViewModel, modifier: Modifier, navigateToMain: () -> Unit, navigateToLogin: () -> Unit) {
     val (isFinish, setFinish) = remember { mutableStateOf(false) }
+    val isLoading by remember { mutableStateOf(false) }
+    val loginViewModel: LoginViewModel = hiltViewModel()
+    val state =  loginViewModel.state.value
+
+    LaunchedEffect(state) {
+        when(state) {
+            is LoginViewModel.LoginUiState.Error -> {
+                navigateToLogin()
+            }
+            is LoginViewModel.LoginUiState.Empty -> {
+
+            }
+            is LoginViewModel.LoginUiState.Success -> {
+            }
+            else -> { }
+        }
+    }
+
+    //TODO Show loading
+
     BoxWithConstraints {
         val offsetY = with(LocalDensity.current) { maxHeight.toPx().toInt() / 2 }
         AnimatedVisibility(

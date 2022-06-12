@@ -12,7 +12,6 @@ import com.ericktijerou.utils.common.LocalSysUiController
 import com.ericktijerou.utils.common.SystemUiController
 import com.hubstaff.challenge.screen.login.LoginViewModel
 import com.hubstaff.challenge.screen.login.UserState
-import com.hubstaff.challenge.screen.main.ApplicationSwitcher
 import com.hubstaff.theme.HubstaffTheme
 import dagger.hilt.android.AndroidEntryPoint
 
