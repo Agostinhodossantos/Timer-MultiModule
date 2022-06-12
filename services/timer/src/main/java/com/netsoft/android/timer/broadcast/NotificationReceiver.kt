@@ -3,7 +3,7 @@ package com.netsoft.android.timer.broadcast
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import com.netsoft.android.timer.TimerState
+import com.hubstaff.utils.common.TimerState
 import org.greenrobot.eventbus.EventBus
 
 class NotificationReceiver : BroadcastReceiver() {

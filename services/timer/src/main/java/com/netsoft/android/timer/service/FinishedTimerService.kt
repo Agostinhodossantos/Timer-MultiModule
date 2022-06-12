@@ -1,4 +1,4 @@
-package com.netsoft.android.timer.service
+package  com.hubstaff.challenge.service
 
 import android.annotation.SuppressLint
 import android.app.*
@@ -6,16 +6,18 @@ import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.netsoft.android.timer.R
-import com.netsoft.android.timer.broadcast.NotificationReceiver
 import com.hubstaff.utils.common.*
 import com.hubstaff.utils.extensions.getOpenTimerTabIntent
 import com.hubstaff.utils.extensions.isOreoPlus
 import com.hubstaff.utils.extensions.toHhMmSs
+import com.netsoft.android.timer.R
+import com.netsoft.android.timer.broadcast.NotificationReceiver
+import dagger.hilt.android.AndroidEntryPoint
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
+@AndroidEntryPoint
 class FinishedTimerService : Service() {
 
     private val bus = EventBus.getDefault()
@@ -113,3 +115,4 @@ fun Context.stopFinishedTimerService() {
 }
 
 object FinishedTimerStopService
+

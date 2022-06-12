@@ -1,8 +1,10 @@
 package com.netsoft.android.timer.di
 
 import android.content.Context
+import com.hubstaff.utils.common.DataManager
 import com.netsoft.android.timer.countdown.IntermittentTimerManager
 import com.netsoft.android.timer.countdown.IntermittentTimerManagerImpl
+import com.netsoft.android.timer.manager.PreferenceManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,7 +25,6 @@ object AppModule {
     fun provideTimerManager(): IntermittentTimerManager {
         return IntermittentTimerManagerImpl()
     }
-
 
     @Singleton
     @Provides

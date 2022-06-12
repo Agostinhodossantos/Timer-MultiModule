@@ -8,18 +8,17 @@ import android.content.Context
 import android.content.Intent
 import android.os.IBinder
 import androidx.core.app.NotificationCompat
-import com.netsoft.android.timer.R
-import com.netsoft.android.timer.TimerState
-import com.hubstaff.utils.common.ONE_THOUSAND_INT
-import com.hubstaff.utils.common.TIMER_RUNNING_ID
-import com.hubstaff.utils.common.ZERO_LONG
+import com.hubstaff.utils.common.*
 import com.hubstaff.utils.extensions.getOpenTimerTabIntent
 import com.hubstaff.utils.extensions.isOreoPlus
+import com.hubstaff.utils.extensions.toHhMmSs
+import com.netsoft.android.timer.R
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
 class TimerService : Service() {
+
     private val bus = EventBus.getDefault()
 
     override fun onCreate() {
@@ -38,7 +37,7 @@ class TimerService : Service() {
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(state: TimerState.Running) {
         if (state.tick % ONE_THOUSAND_INT == ZERO_LONG) {
-            val notification: Notification = notification(state.tick.toString()) //TODO parse toHhMnSs
+            val notification: Notification = notification(state.tick.toHhMmSs())
             val mNotificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
             mNotificationManager.notify(TIMER_RUNNING_ID, notification)
         }
@@ -64,7 +63,7 @@ class TimerService : Service() {
 
     private fun notification(formattedTick: String): Notification {
         val channelId = "simple_alarm_timer"
-        val label = "HSChallenge"
+        val label = getString(R.string.app_name)
         val notificationManager =
             getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
         if (isOreoPlus()) {
