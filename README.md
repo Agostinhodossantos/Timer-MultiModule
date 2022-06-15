@@ -2,9 +2,10 @@
 
 <div align="start">
   <a href="https://github.com/agostinhodossantos">
-  <img height="600em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_1.png"/>
-  <img height="600em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_2.png"/>
-  <img height="600em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_4.png"/>
+  <img height="500em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_1.png"/>
+  <img height="500em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_2.png"/>
+  <img height="500em" src="https://github.com/Agostinhodossantos/Timer-MultiModule/blob/main/screenshots/timer_4.png"/>
+</div>
 </div>
 
 ## This project include:
