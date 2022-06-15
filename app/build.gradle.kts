@@ -35,6 +35,9 @@ apply(plugin = "com.hubstaff.gradle.common.template")
 dependencies {
     implementation(project(mapOf("path" to ":common:theme")))
     implementation(project(mapOf("path" to ":services:authentication")))
+    implementation(project(mapOf("path" to ":services:timer")))
     implementation(project(mapOf("path" to ":common:resources")))
+    implementation(project(mapOf("path" to ":common:utils")))
 }
+
 

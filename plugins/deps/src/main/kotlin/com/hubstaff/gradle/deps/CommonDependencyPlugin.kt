@@ -12,6 +12,8 @@ class CommonDependencyPlugin : BaseDependencyPlugin() {
         }
         project.dependencies {
             "implementation"(Dependencies.timber)
+            "implementation"(Dependencies.eventBus)
+            "implementation"(Dependencies.datastore)
         }
     }
 }
